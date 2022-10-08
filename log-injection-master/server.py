@@ -56,7 +56,7 @@ def login():
             for line in infile.readlines():
                 errors_log.append(line)
     except IOError as e:
-        print e
+        print(e)
     return render_template('login.html', errors=errors_log) 
     
 def check_log(ip):
@@ -79,7 +79,7 @@ def check_log(ip):
                 status,duration = True, 0
             return status, duration
     except IOError as e:
-        print e    
+        print(e)
         
 def write_log(error):
     """ Receives a string and write it to log file. """
@@ -87,7 +87,7 @@ def write_log(error):
         with open('user_log.txt','ab') as outfile:
             outfile.write(error+'\n')
     except IOError as e:
-        print e
+        print(e)
            
 def reverse_autoescape(s):
     """ Remove autoescape default from Flask for new line feed. """
